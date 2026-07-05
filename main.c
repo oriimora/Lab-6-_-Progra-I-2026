@@ -15,3 +15,9 @@ int comparar_por_nombre(const void *a, const void *b) {
     const Persona *p2 = (const Persona *)b;
     return strcmp(p1->nombre, p2->nombre);
 }
+
+int comparar_por_edad(const void *a, const void *b) {
+    const Persona *p1 = (const Persona *)a;
+    const Persona *p2 = (const Persona *)b;
+    return p1->edad - p2->edad;
+}
