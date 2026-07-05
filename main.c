@@ -30,3 +30,11 @@ int comparar_por_estatura(const void *a, const void *b) {
     if (p1->estatura > p2->estatura) return 1;
     return 0;
 }
+
+void imprimir_personas(Persona personas[], int n) {
+    for (int i = 0; i < n; i++) {
+        printf("  %-10s | Edad: %2d | Estatura: %.1f cm\n",
+               personas[i].nombre, personas[i].edad, personas[i].estatura);
+    }
+    printf("\n");
+}
