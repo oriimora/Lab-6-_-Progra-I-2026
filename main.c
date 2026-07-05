@@ -38,3 +38,30 @@ void imprimir_personas(Persona personas[], int n) {
     }
     printf("\n");
 }
+
+int main(void) {
+    Persona personas[NUM_PERSONAS] = {
+        {"Carlos", 25, 172.5},
+        {"Ana",    31, 160.2},
+        {"Beto",   19, 180.0},
+        {"Diana",  45, 165.8},
+        {"Elena",  22, 158.4}
+    };
+
+    printf("=== Arreglo original ===\n");
+    imprimir_personas(personas, NUM_PERSONAS);
+
+    qsort(personas, NUM_PERSONAS, sizeof(Persona), comparar_por_nombre);
+    printf("=== Ordenado por nombre (alfabetico) ===\n");
+    imprimir_personas(personas, NUM_PERSONAS);
+
+    qsort(personas, NUM_PERSONAS, sizeof(Persona), comparar_por_edad);
+    printf("=== Ordenado por edad (menor a mayor) ===\n");
+    imprimir_personas(personas, NUM_PERSONAS);
+
+    qsort(personas, NUM_PERSONAS, sizeof(Persona), comparar_por_estatura);
+    printf("=== Ordenado por estatura (menor a mayor) ===\n");
+    imprimir_personas(personas, NUM_PERSONAS);
+
+    return 0;
+}
