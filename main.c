@@ -21,3 +21,12 @@ int comparar_por_edad(const void *a, const void *b) {
     const Persona *p2 = (const Persona *)b;
     return p1->edad - p2->edad;
 }
+
+int comparar_por_estatura(const void *a, const void *b) {
+    const Persona *p1 = (const Persona *)a;
+    const Persona *p2 = (const Persona *)b;
+
+    if (p1->estatura < p2->estatura) return -1;
+    if (p1->estatura > p2->estatura) return 1;
+    return 0;
+}
